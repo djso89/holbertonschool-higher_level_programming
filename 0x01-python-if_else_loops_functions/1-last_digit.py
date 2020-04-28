@@ -11,6 +11,6 @@ elif number % 10 == 0:
 elif number < 0:
     print("is {:d}".format(number % -10), end=' ')
     print("and is less than 6 and not 0")
-else:
+elif number > 0 and number % 10 < 6:
     print("is {:d}".format(number % 10), end=' ')
     print("and is less than 6 and not 0")
