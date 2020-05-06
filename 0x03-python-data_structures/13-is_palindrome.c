@@ -1,5 +1,25 @@
 #include "lists.h"
 /**
+ * reverse - a function that reverses the linked list
+ * @head: address of the starting node in linked list
+ * Return: new reversed linked list
+ */
+listint_t *reverse(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *next;
+
+	while (*head)
+	{
+		next = (*head)->next;
+		(*head)->next = prev;
+		prev = *head;
+		*head = next;
+	}
+	*head = prev;
+	return (*head);
+}
+/**
  * is_palindrome - a function that checks if a singly linked
  * list is a palindrome
  * @head: address of the starting node in linked list
@@ -7,26 +27,23 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp1 = *head;
-	listint_t *tmp2 = *head;
-	unsigned int i, j, len = 1;
+	listint_t *first;
+	listint_t *last;
 
-	if (!head)
-		return (0);
-	if (!*head || (*head)->next == NULL)
-		return (1);
-	for ( ; tmp2->next; len++, tmp2 = tmp2->next)
-		;
-	for (i = 0; tmp1; i++)
+	for (first = *head, last = *head;
+	     first && first->next; last = last->next)
 	{
-		if (tmp1 == tmp2 || tmp1->next == tmp2)
-			return (1);
-		tmp2 = *head;
-		for (j = 0; j < (len - i) - 1; j++)
-			tmp2 = tmp2->next;
-		if (tmp1->n != tmp2->n)
-			return (0);
-		tmp1 = tmp1->next;
+		first = first->next->next;
+		last = last->next;
 	}
-	return (0);
+	last = reverse(&last);
+	first = *head;
+	while (first && last)
+	{
+		if (first->n != last->n)
+			return (0);
+		first = first->next;
+		last = last->next;
+	}
+	return (1);
 }
