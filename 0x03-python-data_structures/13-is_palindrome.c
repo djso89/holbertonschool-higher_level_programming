@@ -34,7 +34,6 @@ int is_palindrome(listint_t **head)
 	     first && first->next; last = last->next)
 	{
 		first = first->next->next;
-		last = last->next;
 	}
 	last = reverse(&last);
 	first = *head;
