@@ -23,6 +23,11 @@ Traceback (most recent call last):
 TypeError: name must be an integer
 
 Testing for negative number
->>> bg.integer_validator("distance"  -32)
+>>> bg.integer_validator("distance", -3)
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
+
+Testing for list type
+>>> bg.integer_validator("name", [["hello"]])
+Traceback (most recent call last):
+TypeError: name must be an integer
