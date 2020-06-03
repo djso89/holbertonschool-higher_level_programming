@@ -29,4 +29,4 @@ Testing for negative number
 >>> bg.integer_validator("distance")
 Traceback (most recent call last):
 ...
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+ValueError: distance must be greater than 0
