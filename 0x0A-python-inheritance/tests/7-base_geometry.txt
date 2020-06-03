@@ -27,10 +27,7 @@ Testing for negative number
 Traceback (most recent call last)
 ValueError: distance must be greater than 0
 
-Testing for floating point
->>> bg.integer_validator("name", 30.2)
-Traceback (most recent call last)
-TypeError: name must be an integer
+
 
 Testing for 0
 >>> bg.integer_validator("distance", 0)
