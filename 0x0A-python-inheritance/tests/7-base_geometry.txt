@@ -18,10 +18,12 @@ test if my_int as 12 and width as 89 valid
 >>> bg.integer_validator("width", 89)
 
 Testing for name
->>> bg.integer_validator("name", "Sal")
-Traceback (most recent call last):
-...
-TypeError: name must be an integer
+>>> bg = BaseGeometry()
+>>> try:
+...	bg.integer_validator("name", "Sal")
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
 Testing for negative number
 >>> bg.integer_validator("distance", -3)
