@@ -1,0 +1,16 @@
+The ``7-base_geometry`` module
+=======================
+
+using ``BaseGeometry`` Class with ``integer_validator()`` public method
+-----------------------
+
+Testing ``integer_validator``
+
+import BaseGeometry Class
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+test if my_int as 12 and width as 89 valid
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
