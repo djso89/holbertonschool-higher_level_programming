@@ -12,6 +12,8 @@ import BaseGeometry Class
 test if my_int as 12 and width as 89 valid
 >>> bg = BaseGeometry()
 
+>>> bg.integer_validator(45,54)
+
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
