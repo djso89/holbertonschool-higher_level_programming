@@ -20,15 +20,17 @@ test if my_int as 12 and width as 89 valid
 Testing for name
 >>> bg.integer_validator("name", "Sal")
 Traceback (most recent call last):
+...
 TypeError: name must be an integer
 
 Testing for negative number
 >>> bg.integer_validator("distance", -3)
 Traceback (most recent call last):
+...
 ValueError: distance must be greater than 0
 
 Testing for list type
 >>> bg.integer_validator("name", [["hello"]])
 Traceback (most recent call last):
+...
 TypeError: name must be an integer
-
