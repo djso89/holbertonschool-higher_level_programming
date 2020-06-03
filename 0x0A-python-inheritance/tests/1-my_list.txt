@@ -34,3 +34,13 @@ Test for empty list
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
+
+Test for negative numbers
+>>> my_list = MyList()
+>>> my_list.append(-10)
+>>> my_list.append(-2)
+>>> my_list.append(-4)
+>>> my_list.append(-6)
+>>> my_list.append(-5)
+>>> my_list.print_sorted()
+[-10, -6, -5, -4, -2]
