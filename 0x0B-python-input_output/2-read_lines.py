@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""read_lines module """
+
+
 def read_lines(filename="", nb_lines=0):
     """function that reads n lines of a text file
     and prints it to stdout"""
