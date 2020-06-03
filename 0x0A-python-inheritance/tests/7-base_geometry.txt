@@ -25,4 +25,4 @@ TypeError: name must be an integer
 Testing for negative number
 >>> bg.integer_validator("distance"  -32)
 Traceback (most recent call last):
-ValueError: distance must be greater than 0
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
