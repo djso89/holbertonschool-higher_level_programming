@@ -16,7 +16,7 @@ def pascal_triangle(n):
             new_list = []
             new_list.append(1)
             if len(pt_list) > 1:
-                for k in range(len(pt_list[(len(pt_list) -1)])):
+                for k in range(len(pt_list[(len(pt_list) - 1)])):
                     if k < (len(pt_list[(len(pt_list) - 1)]) - 1):
                         new_list.append(pt_list[len(pt_list) - 1][k] +
                                         pt_list[len(pt_list) - 1][k + 1])
