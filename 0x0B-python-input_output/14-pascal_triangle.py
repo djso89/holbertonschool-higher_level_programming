@@ -3,6 +3,10 @@
 
 
 def pascal_triangle(n):
+    """
+    function that returns a list of integers
+    representing the Pascal's triangle of n
+    """
     pt_list = []
 
     if n <= 0:
