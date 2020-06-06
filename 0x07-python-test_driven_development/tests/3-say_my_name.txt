@@ -12,3 +12,9 @@ My name is Kuppa Troopa
 first parameter is string and second parameter is not present
 >>> say_my_name("Kuppa")
 My name is Kuppa
+
+what if first parameter is not string
+>>> say_my_name(1, "Troopa")
+Traceback(most recent call last):
+...
+TypeError: first_name must be a string
