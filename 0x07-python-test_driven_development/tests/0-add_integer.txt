@@ -16,3 +16,9 @@ Test when a is just passed in
 Test the floating points
 >>> add_integer(3.1, 8.3)
 11
+
+Testing when b is string
+>>> add_integer(2, "kuppa")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
