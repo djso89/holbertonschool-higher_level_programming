@@ -3,6 +3,9 @@
 
 
 def add_integer(a, b=98):
+    """
+    function that adds a and b
+    """
     if (type(a) == int or type(a) == float):
         if type(b) == int or type(b) == float:
             return int(a) + int(b)
