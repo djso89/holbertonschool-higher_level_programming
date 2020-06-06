@@ -4,7 +4,11 @@
 
 Import the module
 
->>> add_integer = __import('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(9, 1)
 10
 
+Test when a is just passed in
+
+>>> add_integer(1)
+99
