@@ -19,3 +19,9 @@ what if first parameter is not string
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
+
+what if second parameter is not string
+>>> say_my_name("Kuppa", 19)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
