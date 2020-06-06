@@ -1,0 +1,10 @@
+=======================
+0-add_integer.py tests
+=======================
+
+Import the module
+
+>>> add_integer = __import('0-add_integer').add_integer
+>>> add_integer(9, 1)
+10
+
