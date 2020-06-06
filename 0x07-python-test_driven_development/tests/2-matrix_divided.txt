@@ -23,3 +23,16 @@ Testing for missing two arguments
 Traceback (most recent call last):
 ...
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Testing matrix as list of numbers and div as string
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "b")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+Tesing matrix as list of list of integers and div as zero
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
