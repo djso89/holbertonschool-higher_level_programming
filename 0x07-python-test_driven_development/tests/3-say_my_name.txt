@@ -8,3 +8,7 @@ import the say_my_name
 Both parameters have string
 >>> say_my_name("Kuppa", "Troopa")
 My name is Kuppa Troopa
+
+first parameter is string and second parameter is not present
+>>> say_my_name("Kuppa")
+My name is Kuppa
