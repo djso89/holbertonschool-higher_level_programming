@@ -49,3 +49,13 @@ class Square(Rectangle):
         for key, value in kwargs.items():
             if hasattr(self, key):
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        sq_dict = {}
+        for key, value in self.__dict__.items():
+            if key.startswith('_'):
+                key = key[12:]
+            if key.startswith('width') or key.startswith('height'):
+                key = 'size'
+            sq_dict[key] = value
+        return sq_dict
