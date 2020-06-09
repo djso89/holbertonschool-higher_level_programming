@@ -101,3 +101,15 @@ class Rectangle(Base):
         for key, value in kwargs.items():
             if hasattr(self, key):
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        returns the dictionary representation of
+        a Rectangle
+        """
+        rect_dict = {}
+        for key, value in self.__dict__.items():
+            if key.startswith('_'):
+                key = key[12:]
+            rect_dict[key] = value
+        return rect_dict
