@@ -73,3 +73,7 @@ class Rectangle(Base):
         """set the y """
         integer_validator("y", value)
         self.__y = value
+
+    def area(self):
+        """get the area of rectangle """
+        return self.__width * self.__height
