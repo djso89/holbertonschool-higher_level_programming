@@ -6,6 +6,7 @@ Rectangle Module
 
 from models.base import Base
 
+
 def integer_validator(name, value):
     """ Validate value """
     if type(value) is not int:
@@ -14,6 +15,7 @@ def integer_validator(name, value):
         raise ValueError('{} must be > 0'.format(name))
     if value < 0 and name in ['x', 'y']:
         raise ValueError('{} must be >= 0'.format(name))
+
 
 class Rectangle(Base):
     """ Rectanggle Class """
