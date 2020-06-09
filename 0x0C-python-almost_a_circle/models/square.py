@@ -51,6 +51,10 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        public method to get dictionary
+        representation of Square
+        """
         sq_dict = {}
         for key, value in self.__dict__.items():
             if key.startswith('_'):
