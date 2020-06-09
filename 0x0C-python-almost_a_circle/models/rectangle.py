@@ -6,24 +6,27 @@ Rectangle Module
 
 from models.base import Base
 
+def integer_validator(name, value):
+    """ Validate value """
+    if type(value) is not int:
+        raise TypeError('{} must be an integer'.format(name))
+    if value <= 0 and name in ['width', 'height']:
+        raise ValueError('{} must be > 0'.format(name))
+    if value < 0 and name in ['x', 'y']:
+        raise ValueError('{} must be >= 0'.format(name))
 
 class Rectangle(Base):
     """ Rectanggle Class """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
+        integer_validator('width', width)
         self.__width = width
+        integer_validator('height', height)
         self.__height = height
+        integer_validator('x', x)
         self.__x = x
+        integer_validator('y', y)
         self.__y = y
-
-    def integer_validator(self, name, value):
-        """ Validate value """
-        if type(value) is not int:
-            raise TypeError('{} must be an integer'.format(name))
-        if value <= 0 and name in ['width', 'height']:
-            raise ValueError('{} must be > 0'.format(name))
-        if value < 0 and name in ['x', 'y']:
-            raise ValueError('{} must be >= 0'.format(name))
 
     @property
     def width(self):
@@ -33,7 +36,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """set the width """
-        self.integer_validator('width', value)
+        integer_validator('width', value)
         self.__width = value
 
     @property
@@ -44,8 +47,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """set the height """
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+        integer_validator('height', value)
         self.__height = value
 
     @property
@@ -56,7 +58,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """set the x """
-        self.integer_validator("x", value)
+        integer_validator("x", value)
         self.__x = value
 
     @property
@@ -67,5 +69,5 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """set the y """
-        self.integer_validator("y", value)
+        integer_validator("y", value)
         self.__y = value
