@@ -10,7 +10,7 @@ def integer_validator(name, value):
     """ Validate value """
     if type(value) is not int:
         raise TypeError('{} must be an integer'.format(name))
-    if value <= 0 and name in ['width', 'height']:
+    if value <= 0 and name in ['width']:
         raise ValueError('{} must be > 0'.format(name))
     if value < 0 and name in ['x', 'y']:
         raise ValueError('{} must be >= 0'.format(name))
@@ -38,3 +38,14 @@ class Square(Rectangle):
         integer_validator('width', value)
         self.height = value
         self.width = value
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attributes """
+        if args:
+            attributes = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+            return
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
