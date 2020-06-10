@@ -20,6 +20,15 @@ class RectangleTest(unittest.TestCase):
         r3 = Rectangle(2, 4)
         self.assertEqual(r3.id, 3)
 
+    def tearDown(self):
+        """ tearDown destroys any existing objects and processes """
+        pass
+
+    def test_type(self):
+        """ Test type """
+        r1 = Rectangle(1, 2)
+        self.assertTrue(type(r1) is Rectangle)
+
     def test_check_input(self):
         """test if input id is able to set """
         r3 = Rectangle(10, 2, 0, 0, 12)
