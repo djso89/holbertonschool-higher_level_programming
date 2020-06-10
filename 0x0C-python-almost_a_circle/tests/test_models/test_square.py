@@ -73,3 +73,10 @@ class TestSquare(unittest.TestCase):
             "y must be >= 0",
             Square,
             6, 6, -6)
+
+    def test_zero_size(self):
+        self.assertRaisesRegex(
+            ValueError,
+            "width must be > 0",
+            Square,
+            0)
