@@ -2,7 +2,7 @@
 """Base module """
 
 import json
-
+import os
 
 class Base:
     """Base Class """
@@ -54,3 +54,16 @@ class Base:
             new = cls(1)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances """
+        filename = cls.__name__ + '.json'
+        instances = []
+        if not os.path.exists(filename):
+            return []
+        with open(filename, "r") as jf:
+            dictionary = cls.from_json_string(jf.read())
+        for word in dictionary:
+            instances.append(cls.create(**word))
+        return instances
