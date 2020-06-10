@@ -4,6 +4,8 @@ Unittesting for Class - Base
 """
 
 import unittest
+import sys
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -26,3 +28,8 @@ class BaseTest(unittest.TestCase):
 
         b4 = Base(-12)
         self.assertEqual(b4.id, -12)
+
+    def test_rect_create(self):
+        comp_dict =  {'id': 89, 'width': 1, 'height': 1, 'x': 0, 'y': 0}
+        P = Rectangle.create(**{'id': 89})
+        self.assertEqual(P.to_dictionary(), comp_dict)
