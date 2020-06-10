@@ -64,3 +64,10 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             'string', 2, 0, 0, 12
             )
+
+        self.assertRaisesRegex(
+            TypeError,
+            'width must be an integer',
+            Rectangle,
+            [2, 4, 9, 5], 2, 0, 1, 12
+            )
