@@ -65,6 +65,8 @@ class RectangleTest(unittest.TestCase):
             'string', 2, 0, 0, 12
             )
 
+    def test_width_type_error1(self):
+        """another test for width in rectangle """
         self.assertRaisesRegex(
             TypeError,
             'width must be an integer',
