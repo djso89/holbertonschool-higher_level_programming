@@ -58,6 +58,14 @@ class RectangleTest(unittest.TestCase):
         rect_area = r1.area()
         self.assertEqual(rect_area, 20)
 
+    def test_display_no_xy(self):
+        out = StringIO()
+        sys.stdout = out
+        r1 = Rectangle(2, 3)
+        r1.display()
+        sys.stdout = sys.__stdout__
+        assert out.getvalue() == "##\n##\n##\n"
+
     def test_subclass_check(self):
         """check if Rectangle is sub of Base """
         self.assertEqual(issubclass(Rectangle, Base), True)
