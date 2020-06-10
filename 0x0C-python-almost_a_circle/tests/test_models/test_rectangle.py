@@ -150,3 +150,18 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             5, 0
             )
+
+    def test_xy_negative(self):
+        self.assertRaisesRegex(
+            ValueError,
+            "x must be >= 0",
+            Rectangle,
+            5, 4, -1
+            )
+
+        self.assertRaisesRegex(
+            ValueError,
+            "y must be >= 0",
+            Rectangle,
+            5, 1, 2, -4
+            )
