@@ -96,3 +96,12 @@ class RectangleTest(unittest.TestCase):
         print(r)
         sys.stdout == sys.__stdout__
         assert out.getvalue() == "[Rectangle] (87) 4/5 - 2/3\n"
+
+    def test_str_method(self):
+        """test the __str__ public method """
+        out = StringIO()
+        sys.stdout = out
+        r = Rectangle(2, 2, 2, 2, 12)
+        print(r)
+        sys.stdout = sys.__stdout__
+        assert out.getvalue() == "[Rectangle] (12) 2/2 - 2/2\n"
