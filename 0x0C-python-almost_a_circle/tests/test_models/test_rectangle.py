@@ -105,3 +105,12 @@ class RectangleTest(unittest.TestCase):
         print(r)
         sys.stdout = sys.__stdout__
         assert out.getvalue() == "[Rectangle] (12) 2/2 - 2/2\n"
+
+    def test_height_number_str(self):
+        """test if height is assigned as string number """
+        self.assertRaisesRegex(
+            TypeError,
+            'height must be an integer',
+            Rectangle,
+            1, "2", 0, 0, 12
+            )
