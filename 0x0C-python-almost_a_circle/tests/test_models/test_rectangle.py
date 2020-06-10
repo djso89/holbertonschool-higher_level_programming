@@ -187,14 +187,3 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             5, 1, 2, -4
             )
-
-    def test_to_dictionary(self):
-        out = StringIO()
-        sys.stdout = out
-        r = Rectangle(1, 4, 2, 5, 32)
-        r_list = r.to_dictionary()
-        print(r_list)
-        sys.stdout = sys.__stdout__
-        disp_id_width_height = "{'id': 32, 'width': 1, 'height': 4"
-        disp_xy = ", 'x': 2, 'y': 5}\n"
-        assert out.getvalue() == disp_id_width_height + disp_xy
