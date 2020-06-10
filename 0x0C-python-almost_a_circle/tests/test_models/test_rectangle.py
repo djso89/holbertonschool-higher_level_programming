@@ -9,6 +9,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 from io import StringIO
 
+
 class RectangleTest(unittest.TestCase):
     """Class rectangle unittest """
     def test_check_id(self):
@@ -194,6 +195,6 @@ class RectangleTest(unittest.TestCase):
         r_list = r.to_dictionary()
         print(r_list)
         sys.stdout = sys.__stdout__
-        disp_id_width_height ="{'id': 32, 'width': 1, 'height': 4"
+        disp_id_width_height = "{'id': 32, 'width': 1, 'height': 4"
         disp_xy = ", 'x': 2, 'y': 5}\n"
         assert out.getvalue() == disp_id_width_height + disp_xy
