@@ -188,7 +188,7 @@ class RectangleTest(unittest.TestCase):
             5, 1, 2, -4
             )
 
-    def test_to_dictionary(self):
+    def test_to_dict(self):
         out = StringIO()
         sys.stdout = out
         r = Rectangle(1, 4, 2, 5, 32)
