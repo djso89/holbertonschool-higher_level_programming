@@ -44,3 +44,13 @@ class Base:
         if type(json_string) != str:
             raise TypeError("json_string must be string")
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns the instance with all attributes already set """
+        if cls.__name__ == "Rectangle":
+            new = cls(1, 1)
+        if cls.__name__ == "Square":
+            new = cls(1)
+        new.update(**dictionary)
+        return new
