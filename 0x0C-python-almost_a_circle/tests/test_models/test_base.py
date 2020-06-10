@@ -43,3 +43,7 @@ class BaseTest(unittest.TestCase):
         list_objs_rect = Rectangle.load_from_file()
         self.assertIsInstance(list_objs_rect[0], Rectangle)
         self.assertEqual(list_objs_rect[0].to_dictionary(), d1)
+
+        Rectangle.save_to_file(None)
+        list_objs_rect = Rectangle.load_from_file()
+        self.assertEqual(list_objs_rect, [])
