@@ -8,6 +8,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class BaseTest(unittest.TestCase):
     """clas Base unittest """
     def test_increment(self):
