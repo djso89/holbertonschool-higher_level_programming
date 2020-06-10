@@ -39,7 +39,10 @@ class RectangleTest(unittest.TestCase):
         """test x of rectangle """
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.x, 0)
-        
+
+        r2 = Rectangle(4, 3, 1, 2)
+        self.assertEqual(r2.x, 1)
+
     def test_subclass_check(self):
         """check if Rectangle is sub of Base """
         self.assertEqual(issubclass(Rectangle, Base), True)
