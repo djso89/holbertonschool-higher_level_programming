@@ -53,3 +53,10 @@ class TestSquare(unittest.TestCase):
             "y must be an integer",
             Square,
             1, 2, "4")
+
+    def test_negatives(self):
+        self.assertRaisesRegex(
+            ValueError,
+            "width must be > 0",
+            Square,
+            -1)
