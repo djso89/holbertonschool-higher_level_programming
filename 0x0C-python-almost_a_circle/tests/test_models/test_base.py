@@ -79,3 +79,9 @@ class BaseTest(unittest.TestCase):
         Square.save_to_file(None)
         list_objs_sq = Square.load_from_file()
         self.assertEqual(list_objs_sq, [])
+
+        s = Square(12)
+        d1 = s.to_dictionary()
+        Square.save_to_file([s])
+        list_objs_sq = Square.load_from_file()
+        self.assertEqual(list_objs_sq[0].to_dictionary(), d1)
