@@ -24,3 +24,8 @@ class RectangleTest(unittest.TestCase):
         """test if input id is able to set """
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+
+    def test_check_width(self):
+        """test width set of rectangle """
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.width, 10)
