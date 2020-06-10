@@ -96,3 +96,9 @@ class TestSquare(unittest.TestCase):
         print(s)
         sys.stdout = sys.__stdout__
         assert out.getvalue() == "[Square] (12) 0/1 - 2\n"
+
+    def test_to_dictionary(self):
+        s = Square(3, 0, 0, 5)
+        s_dict = s.to_dictionary()
+        comp_dict = {'id': 5, 'x': 0, 'y': 0, 'size': 3}
+        self.assertEqual(s_dict, comp_dict)
