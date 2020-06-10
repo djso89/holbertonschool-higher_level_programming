@@ -11,8 +11,9 @@ from models.square import Square
 class RectangleTest(unittest.TestCase):
     """Class rectangle unittest """
     def test_check_id(self):
+        Base._Base__nb_objects = 0
         """test if id increments """
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
         r2 = Rectangle(1, 6)
-        self.assertEqual(r2.id, 1)
+        self.assertEqual(r2.id, 2)
