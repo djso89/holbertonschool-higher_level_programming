@@ -4,10 +4,11 @@
 
 import unittest
 import json
+import sys
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-
+from io import StringIO
 
 class TestSquare(unittest.TestCase):
     """Test Class Square"""
@@ -86,3 +87,12 @@ class TestSquare(unittest.TestCase):
         s = Square(6)
         s_dict = s.to_dictionary()
         self.assertEqual(comp_dict, s_dict)
+
+    def test_str_method(self):
+        """test the __str__ public method """
+        out = StringIO()
+        sys.stdout = out
+        s = Square(2, 0, 1, 12)
+        print(s)
+        sys.stdout = sys.__stdout__
+        assert out.getvalue() == "[Square] (12) 0/1 - 2\n"
