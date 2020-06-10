@@ -54,3 +54,16 @@ class BaseTest(unittest.TestCase):
         Rectangle.save_to_file(None)
         list_objs_rect = Rectangle.load_from_file()
         self.assertEqual(list_objs_rect, [])
+
+    def test_sq_create(self):
+        s = Square.create(**{'id': 23})
+        comp_dict = {'id': 23, 'size': 1, 'x': 0, 'y': 0}
+        self.assertEqual(s.to_dictionary(), comp_dict)
+
+        s1 = Square.create(**{'id': 23, 'size': 34})
+        comp_dict1 = {'id': 23, 'size': 34, 'x': 0, 'y': 0}
+        self.assertEqual(s1.to_dictionary(), comp_dict1)
+
+        s2 = Square.create(**{'id': 3, 'size': 4, 'x': 5})
+        comp_dict2 = {'id': 3, 'size': 4, 'x': 5, 'y': 0}
+        self.assertEqual(s2.to_dictionary(), comp_dict2)
