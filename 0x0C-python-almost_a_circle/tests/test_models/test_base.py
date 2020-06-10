@@ -10,7 +10,7 @@ from models.square import Square
 
 
 class BaseTest(unittest.TestCase):
-    """clas Base unittest """
+    """class Base unittest """
     def test_increment(self):
         """test to see if id increments """
         Base.__Base__nb_objects = 0
@@ -20,3 +20,9 @@ class BaseTest(unittest.TestCase):
 
         b2 = Base()
         self.assertEqual(b2.id, 2)
+
+        b3 = Base()
+        self.assertEqual(b3.id, 3)
+
+        b4 = Base(-12)
+        self.assertEqual(b4.id, -12)
