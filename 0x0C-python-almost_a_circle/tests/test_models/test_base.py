@@ -49,6 +49,8 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(list_objs_rect, [])
 
     def test_save_to_file_None(self):
+        r1 = Rectangle(1, 3, 4, 2, 8)
+        Rectangle.save_to_file([r1])
         Rectangle.save_to_file(None)
         list_objs_rect = Rectangle.load_from_file()
         self.assertEqual(list_objs_rect, [])
