@@ -36,3 +36,11 @@ class Base:
             objects = [obj.to_dictionary() for obj in list_objs]
         with open(cls.__name__ + ".json", "w+") as jf:
             jf.write(cls.to_json_string(objects))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        if type(json_string) != str:
+            raise TypeError("json_string must be string")
+        return json.loads(json_string)
