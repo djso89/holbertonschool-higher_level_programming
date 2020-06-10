@@ -73,3 +73,12 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             [2, 4, 9, 5], 2, 0, 1, 12
             )
+
+    def test_width_negative(self):
+        """test when width is negative """
+        self.assertRaisesRegex(
+            ValueError,
+            'width must be > 0',
+            Rectangle,
+            -7, 2, 2, 1, 0
+            )
