@@ -26,3 +26,10 @@ class TestSquare(unittest.TestCase):
         r1 = Square(12)
         self.assertEqual(r1.id, 2)
         self.assertEqual(issubclass(Square, Base), True)
+
+    def test_insert_size_string(self):
+        self.assertRaisesRegex(
+            TypeError,
+            "width must be an integer",
+            Square,
+            "2")
