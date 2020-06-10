@@ -69,6 +69,7 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(s2.to_dictionary(), comp_dict2)
 
     def test_square_save(self):
+        Square.save_to_file([Square(1)])
         Square.save_to_file([])
         list_objs_sq = Square.load_from_file()
         self.assertEqual(list_objs_sq, [])
