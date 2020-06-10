@@ -60,3 +60,9 @@ class TestSquare(unittest.TestCase):
             "width must be > 0",
             Square,
             -1)
+
+        self.assertRaisesRegex(
+            ValueError,
+            "x must be >= 0",
+            Square,
+            1, -2)
