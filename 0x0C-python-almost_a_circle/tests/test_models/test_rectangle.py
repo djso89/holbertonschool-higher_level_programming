@@ -189,10 +189,7 @@ class RectangleTest(unittest.TestCase):
             )
 
     def test_to_dict(self):
-        out = StringIO()
-        sys.stdout = out
-        r = Rectangle(1, 4, 2, 5, 32)
-        r_list = r.to_dictionary()
-        print(r_list)
-        sys.stdout = sys.__stdout__
-        assert out.getvalue() == "{'id': 32, 'width': 1, 'height': 4, 'x': 2, 'y': 5}\n"
+        r3 = Rectangle(1, 4, 2, 5, 32)
+        comp_list = {'id': 32, 'width': 1, 'height': 4, 'x': 2, 'y': 5}
+        r_list = r3.to_dictionary()
+        self.assertEqual(r_list, comp_list)
