@@ -102,3 +102,12 @@ class TestSquare(unittest.TestCase):
         s_dict = s.to_dictionary()
         comp_dict = {'id': 5, 'x': 0, 'y': 0, 'size': 3}
         self.assertEqual(s_dict, comp_dict)
+
+    def test_update(self):
+        out = StringIO()
+        sys.stdout = out
+        s = Square(3, 1, 2, 7)
+        s.update(87, 2, 3, 4)
+        print(s)
+        sys.stdout = sys.__stdout__
+        assert out.getvalue() == "[Square] (87) 3/4 - 2\n"
