@@ -67,3 +67,14 @@ class BaseTest(unittest.TestCase):
         s2 = Square.create(**{'id': 3, 'size': 4, 'x': 5})
         comp_dict2 = {'id': 3, 'size': 4, 'x': 5, 'y': 0}
         self.assertEqual(s2.to_dictionary(), comp_dict2)
+
+    def test_square_save(self):
+        Square.save_to_file([])
+        list_objs_sq = Square.load_from_file()
+        self.assertEqual(list_objs_sq, [])
+
+        s1 = Square(1, 3, 4, 2)
+        Square.save_to_file([s1])
+        Square.save_to_file(None)
+        list_objs_sq = Square.load_from_file()
+        self.assertEqual(list_objs_sq, [])
