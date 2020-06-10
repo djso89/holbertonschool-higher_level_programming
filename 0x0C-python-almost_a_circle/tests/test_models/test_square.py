@@ -80,3 +80,9 @@ class TestSquare(unittest.TestCase):
             "width must be > 0",
             Square,
             0)
+
+    def test_to_dict(self):
+        comp_dict = {'id': 1, 'x': 0, 'y': 0, 'size': 6}
+        s = Square(6)
+        s_dict = s.to_dictionary()
+        self.assertEqual(comp_dict, s_dict)
