@@ -18,7 +18,11 @@ class TestSquare(unittest.TestCase):
     def test_base(self):
         """Test if inherits"""
         r = Square(23)
-        r1 = Square(12)
         self.assertEqual(r.id, 1)
+        self.assertEqual(r.size, 23)
+        self.assertEqual(r.x, 0)
+        self.assertEqual(r.y, 0)
+
+        r1 = Square(12)
         self.assertEqual(r1.id, 2)
         self.assertEqual(issubclass(Square, Base), True)
