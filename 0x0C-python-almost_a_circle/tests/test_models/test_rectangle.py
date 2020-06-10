@@ -132,3 +132,12 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             1, 2, 3, "45"
             )
+
+    def test_width_zero(self):
+        """test if width is zero """
+        self.assertRaisesRegex(
+            ValueError,
+            "width must be > 0",
+            Rectangle,
+            0, 2
+            )
