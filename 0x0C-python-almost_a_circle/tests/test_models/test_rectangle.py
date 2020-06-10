@@ -114,3 +114,21 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             1, "2", 0, 0, 12
             )
+
+    def test_x_number_str(self):
+        """test if x is assigned as string number """
+        self.assertRaisesRegex(
+            TypeError,
+            "x must be an integer",
+            Rectangle,
+            1, 2, "32"
+            )
+
+    def test_y_number_str(self):
+        """test if y is assigned as string number """
+        self.assertRaisesRegex(
+            TypeError,
+            "y must be an integer",
+            Rectangle,
+            1, 2, 3, "45"
+            )
