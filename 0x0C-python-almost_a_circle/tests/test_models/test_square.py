@@ -27,6 +27,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(r1.id, 2)
         self.assertEqual(issubclass(Square, Base), True)
 
+        r2 = Square(2, 3, 4, 9)
+        self.assertEqual(r2.id, 9)
+        self.assertEqual(r2.size, 2)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r2.y, 4)
+
     def test_insert_size_string(self):
         self.assertRaisesRegex(
             TypeError,
