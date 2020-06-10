@@ -3,10 +3,11 @@
 
 
 import unittest
+import sys
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-
+from io import StringIO
 
 class RectangleTest(unittest.TestCase):
     """Class rectangle unittest """
@@ -82,3 +83,16 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             -7, 2, 2, 1, 0
             )
+
+    def test_update(self):
+        """test for update """
+        out = StringIO()
+        sys.stdout = out
+        r = Rectangle(12, 7, 2, 5)
+        r.update(87)
+        r.update(87, 2)
+        r.update(87, 2, 3, 4)
+        r.update(87, 2, 3, 4, 5)
+        print(r)
+        sys.stdout == sys.__stdout__
+        assert out.getvalue() == "[Rectangle] (87) 4/5 - 2/3\n"
