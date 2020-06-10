@@ -56,6 +56,11 @@ class RectangleTest(unittest.TestCase):
         """check if Rectangle is sub of Base """
         self.assertEqual(issubclass(Rectangle, Base), True)
 
-    def test_width_type(self):
-        r1 = Rectangle(2, 7)
-        self.assertEqual(r1.width, 2)
+    def test_width_type_error(self):
+        """test typeerror for width in rectangle """
+        self.assertRaisesRegex(
+            TypeError,
+            'width must be an integer',
+            Rectangle,
+            'string', 2, 0, 0, 12
+            )
