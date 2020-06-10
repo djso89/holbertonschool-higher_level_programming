@@ -33,3 +33,13 @@ class BaseTest(unittest.TestCase):
         comp_dict =  {'id': 89, 'width': 1, 'height': 1, 'x': 0, 'y': 0}
         P = Rectangle.create(**{'id': 89})
         self.assertEqual(P.to_dictionary(), comp_dict)
+
+    def test_save_to_file(self):
+        r1 = Rectangle(1, 3, 4, 2, 8)
+        d1 = r1.to_dictionary()
+        r2 = Rectangle(1, 5)
+        r3 = Rectangle(3, 5, 8, 2)
+        Rectangle.save_to_file([r1, r2, r3])
+        list_objs_rect = Rectangle.load_from_file()
+        self.assertIsInstance(list_objs_rect[0], Rectangle)
+        self.assertEqual(list_objs_rect[0].to_dictionary(), d1)
