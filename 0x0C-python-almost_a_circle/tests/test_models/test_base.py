@@ -48,7 +48,7 @@ class BaseTest(unittest.TestCase):
         list_objs_rect = Rectangle.load_from_file()
         self.assertEqual(list_objs_rect, [])
 
-    def test_save_to_file_sq_brkt(self):
-        Rectangle.save_to_file([])
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
         list_objs_rect = Rectangle.load_from_file()
         self.assertEqual(list_objs_rect, [])
