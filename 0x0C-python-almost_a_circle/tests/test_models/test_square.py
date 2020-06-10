@@ -46,3 +46,10 @@ class TestSquare(unittest.TestCase):
             "x must be an integer",
             Square,
             1, "2")
+
+    def test_insert_y_string(self):
+        self.assertRaisesRegex(
+            TypeError,
+            "y must be an integer",
+            Square,
+            1, 2, "4")
