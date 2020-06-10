@@ -19,3 +19,8 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r2.id, 2)
         r3 = Rectangle(2, 4)
         self.assertEqual(r3.id, 3)
+
+    def test_check_input(self):
+        """test if input id is able to set """
+        r3 = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r3.id, 12)
