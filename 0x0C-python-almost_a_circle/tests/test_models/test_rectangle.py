@@ -141,3 +141,12 @@ class RectangleTest(unittest.TestCase):
             Rectangle,
             0, 2
             )
+
+    def test_height_zero(self):
+        """test if height is zero """
+        self.assertRaisesRegex(
+            ValueError,
+            "height must be > 0",
+            Rectangle,
+            5, 0
+            )
