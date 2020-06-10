@@ -17,3 +17,5 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r1.id, 1)
         r2 = Rectangle(1, 6)
         self.assertEqual(r2.id, 2)
+        r3 = Rectangle(2, 4)
+        self.assertEqual(r3.id, 3)
