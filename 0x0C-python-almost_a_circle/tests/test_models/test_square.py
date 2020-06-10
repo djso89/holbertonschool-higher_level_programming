@@ -33,3 +33,10 @@ class TestSquare(unittest.TestCase):
             "width must be an integer",
             Square,
             "2")
+
+    def test_insert_x_string(self):
+        self.assertRaisesRegex(
+            TypeError,
+            "x must be an integer",
+            Square,
+            1, "2")
