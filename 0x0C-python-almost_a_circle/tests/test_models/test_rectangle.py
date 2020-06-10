@@ -55,3 +55,7 @@ class RectangleTest(unittest.TestCase):
     def test_subclass_check(self):
         """check if Rectangle is sub of Base """
         self.assertEqual(issubclass(Rectangle, Base), True)
+
+    def test_width_type(self):
+        r1 = Rectangle(2, 7)
+        self.assertEqual(r1.width, 2)
