@@ -6,7 +6,7 @@ a name containing the letter a from the database hbtn_0e_6_usa
 
 from sys import argv
 from model_state import Base, State
-
+from model_city import City
 from sqlalchemy import (create_engine, Table, Integer,
                         String, Column)
 from sqlalchemy.orm import sessionmaker
@@ -21,10 +21,9 @@ if __name__ == "__main__":
     session.configure(bind=engine)
     session__ = session()
 
-    get_result = session__.query(State, City).
-    filter(City.state_id == State.id).
+    res = session__.query(State, City).filter(City.state_id == State.id).\
     order_by(City.id).all()
 
-    for get in get_result:
-        print("{}: ({}) {}".format(get.State.name, get.City.id, i.City.name))
+    for get in res:
+        print("{}: ({}) {}".format(get.State.name, get.City.id, get.City.name))
     session__.close()
