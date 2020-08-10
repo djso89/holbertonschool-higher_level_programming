@@ -21,9 +21,8 @@ if __name__ == "__main__":
     session.configure(bind=engine)
     session__ = session()
 
-    res =
-    session__.query(State, City).filter(City.state_id == State.id).
-    order_by(City.id).all()
+    res = session__.query(State, City).filter(
+        City.state_id == State.id).order_by(City.id).all()
 
     for get in res:
         print("{}: ({}) {}".format(get.State.name, get.City.id, get.City.name))
