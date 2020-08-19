@@ -10,19 +10,19 @@ def find_peak(list_of_integers):
         return None
 
     if (len(numbers) == 1):
+        return (numbers[0])
+
+    if numbers[0] > numberss[1]:
         return (nums[0])
 
-    if nums[0] > nums[1]:
-        return (nums[0])
-
-    if nums[-1] > nums[-2]:
-        return numbs[-1]
+    if numbers[-1] > numbers[-2]:
+        return numbers[-1]
 
     mid = len(numbers) // 2
 
     if (numbers[mid - 1] > numbers[mid]):
-        return (find_peak(nums[:mid]))
+        return (find_peak(numbers[:mid]))
     elif (numbers[mid - 1] > numbers[mid]):
-        return (find_peak(nums[mid + 1:]))
+        return (find_peak(numbers[mid + 1:]))
     else:
         return(numbers[mid])
