@@ -2,9 +2,9 @@
 """a function that finds a peak in a list of unsorted integers."""
 
 
-def find_peak(list_int):
+def find_peak(list_of_integers):
     """ recursion method """
-    numbers = list_int
+    numbers = list_of_integers
 
     if len(numbers) == 0 or numbers is None:
         return None
