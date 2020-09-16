@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 function factorial (number) {
-  if (isNaN(number) || number == (1 || 0)) {
+  if (isNaN(number) || number === (1 || 0)) {
     return 1;
   }
 
